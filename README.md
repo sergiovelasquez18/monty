@@ -15,7 +15,7 @@ What you should learn from this project:
 * How to work with git submodules
 
 ---
-**Resources**
+## Resources
 
 	* Google
 	* How do I use extern to share variables between source files in C?
