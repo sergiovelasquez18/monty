@@ -1,4 +1,5 @@
 # 0x18. C - Stacks, Queues - LIFO, FIFO aka monty
+![monty](https://pbs.twimg.com/media/CFYYWy6UEAE9Ow-.png)
 
 ## Description
 _In this project we are tasked to create an interpreter for Monty ByteCode files. These files will have commands per line to manipulate the data structure given._
