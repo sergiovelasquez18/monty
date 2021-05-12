@@ -29,4 +29,18 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ```
 ---
 
+## Example
+<pre><code>julien@ubuntu:~/0x18. Stack (LIFO) &amp; queue (FIFO)$ cat -e bytecodes/000.m
+push 0$
+push 1$
+push 2$
+  push 3$
+                   pall    $
+push 4$
+    push 5    $
+      push    6        $
+pall$
+julien@ubuntu:~/0x18. Stack (LIFO) &amp; queue (FIFO)$
+</code></pre>
+
 
