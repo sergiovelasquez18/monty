@@ -88,5 +88,4 @@ julien@ubuntu:~/0x18. Stack (LIFO) &amp; queue (FIFO)$
 ---
 
 ## Authors
-
-
+* **Sergio velasquez** - [sergiovelasquez18](https://github.com/sergiovelasquez18)
