@@ -1,5 +1,5 @@
-#ifndef _MONTY_H
-#define _MONTY_H
+#ifndef MONTY_H
+#define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -20,9 +20,9 @@
  */
 typedef struct stack_s
 {
-		int n;
-		struct stack_s *prev;
-		struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,17 +35,16 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-		char *opcode;
-		void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
 /**
  * struct help - helper functions
- * @token2: the opcode
- * @buffer: function to handle the opcode
+ * @token2: pointer to token 1
+ * @buffer: pointer to string returned from getline
  * @fp: pointer to file
  * @head: pointer to beginning of list
- * @line_number: line number file
+ * @line_number: line number of file
  * @n: number of bytes read
  * @token1: pointer to token 2
  * @queueflag: flag for queue function
@@ -67,10 +66,24 @@ extern helpers helpy;
 
 void push(stack_t **head, unsigned int line_number);
 void pall(stack_t **head, unsigned int line_number);
+void pint(stack_t **head, unsigned int line_number);
 void free_dlistint(stack_t *head);
 int montyprocess(void);
 void free_everything(void);
 int _isnumber(void);
-int queuepush(stack_t **head, unsigned int line_number);
+void pop(stack_t **head, unsigned int line_number);
+void sw(stack_t **head, unsigned int line_number);
+void add(stack_t **head, unsigned int line_number);
+void nop(stack_t **head, unsigned int line_number);
+void sub(stack_t **head, unsigned int line_number);
+void divi(stack_t **head, unsigned int line_number);
+void mul(stack_t **head, unsigned int line_number);
+void mod(stack_t **head, unsigned int line_number);
+void pstr(stack_t **head, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 int montycompare(void);
-#endif /* _MONTY_H */
+void rotl(stack_t **head, unsigned int line_number);
+void rotr(stack_t **head, unsigned int line_number);
+int queuepush(stack_t **head, unsigned int line_number);
+
+#endif /* MONTY_H */
