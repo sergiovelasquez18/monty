@@ -118,5 +118,5 @@ void sw(stack_t **head, unsigned int line_number)
 	}
 	tmp = (*head)->n;
 	(*head)->n = (*head)->next->n;
-	(*head)->next->n = tmp;
+	(*head)->next->n = tsmp;
 }
