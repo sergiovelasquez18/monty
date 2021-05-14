@@ -35,7 +35,7 @@ int montyprocess(void)
 			}
 			_isnumber();
 		}
-		/*montycompare();*/
+		montycompare();
 	}
 	return (0);
 }
@@ -44,10 +44,15 @@ int montyprocess(void)
  *
  * Return: 0 on success, EXIT_FAILURE on error
  */
-/*int montycompare(void)
+int montycompare(void)
 {
 	int i = 0;
-	instruction_t instructions[] = {{"push", push}, {"pall", pall}, {NULL, NULL}};
+	instruction_t instructions[] = {{"push", push}, {"sub", sub}, {"pstr", pstr},
+					{"div", divi}, {"mul", mul}, {"pall", pall},
+					{"pint", pint}, {"nop", nop}, {"pchar", pchar},
+					{"mod", mod}, {"pop", pop}, {"swap", sw},
+					{"add", add}, {"rotl", rotl}
+					, {"rotr", rotr}, {NULL, NULL}};
 	i = 0;
 	while (instructions[i].opcode != NULL)
 	{
@@ -66,7 +71,8 @@ int montyprocess(void)
 		exit(EXIT_FAILURE);
 	}
 	return (0);
-}*/
+}
+
 /**
  * free_everything - frees allocated memory
  */
@@ -103,33 +109,5 @@ int _isnumber(void)
 		}
 		i++;
 	}
-	return (0);
-}
-int queuepush(stack_t **head, unsigned int line_number)
-{
-	stack_t *newnode = NULL;
-	stack_t  *current = *head;
-	(void)line_number;
-
-	newnode = malloc(sizeof(stack_t));
-	if (!newnode)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		free_everything();
-		exit(EXIT_FAILURE);
-	}
-	newnode->n = atoi(helpy.token2);
-	newnode->next = NULL;
-	newnode->prev = NULL;
-	if (!*head)
-	{
-		newnode->next = *head;
-		*head = newnode;
-		return (0);
-	}
-	while (current->next != NULL)
-		current = current->next;
-	newnode->prev = current;
-	current->next = newnode;
 	return (0);
 }
