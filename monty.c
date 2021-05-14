@@ -1,6 +1,5 @@
 #include "monty.h"
 helpers helpy;
-
 /**
  * main - runs the monty program
  * @argc: number of arguments
